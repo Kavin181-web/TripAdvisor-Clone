@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo img {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+.search {
+    width: 800px;
+    padding: 10px 14px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: green;
+}
+
+/* Menu */
+.menu {
+    background-color: white;
+    padding: 10px 30px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: green;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+    animation: fadein 1s;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 50px;
+    color: darkgreen;
+    animation: titleAnimation 1.5s ease;
+}
+
+@keyframes titleAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero p {
+    margin-top: 8px;
+}
+
+.hero button {
+    margin-top: 18px;
+    padding: 12px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: black;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px 20px 10px 20px;
+}
+
+.filters p {
+    border: 1px solid gray;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.filters p:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Section */
+.section {
+    padding: 10px 20px 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    animation: up 1s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-box span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.card h3,
+.card p {
+    padding: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons i {
+    font-size: 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: green;
+}
+
+/* Animation */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:768px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .search {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .menu {
+        padding: 10px 15px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 25px 15px 15px 15px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .filters {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .footer {
+        padding: 20px 15px;
+    }
+}
